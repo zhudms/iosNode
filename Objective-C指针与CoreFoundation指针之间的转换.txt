@@ -1,0 +1,11 @@
+CocoaFoundation指针与CoreFoundation指针转换，需要考虑的是所指向对象所有权的归属。ARC提供了3个修饰符来管理。
+
+　　1. __bridge，什么也不做，仅仅是转换。此种情况下：
+
+　　　　i). 从Cocoa转换到Core，需要人工CFRetain，否则，Cocoa指针释放后， 传出去的指针则无效。
+
+　　　　ii). 从Core转换到Cocoa，需要人工CFRelease，否则，Cocoa指针释放后，对象引用计数仍为1，不会被销毁。
+
+　　2. __bridge_retained，转换后自动调用CFRetain，即帮助自动解决上述i的情形。
+
+　　2. __bridge_transfer，转换后自动调用CFRelease，即帮助自动解决上述ii的情形
