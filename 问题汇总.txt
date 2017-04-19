@@ -1,0 +1,8 @@
+问题汇总：
+
+1、super的方法和self完全不同，需要写demo测试，super指的是第一次被继承方法的类的super类？（写4代继承，及隔代继承的demo测试，最好能跟java一起测试）
+--start.ios.txt --115L
+2、这里B继承了A，a是A类型，如果我把a强转成一个完全不相关的C类型会怎么样？C类型有没有whoareyou方法
+--start.ios.txt --154L
+3、签名：没有继承关系的类中的方法的参数和返回值需要相同吗 ？
+--start.ios.txt --174L
