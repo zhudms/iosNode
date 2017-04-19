@@ -30,6 +30,8 @@ Cocoa:
         使编译器能够通过拓展名区分出要编译的文件是 C，C++还是OC文件 
         只有只包含C代码的文件可以被声明为.c文件，否则C编译器无法识别
 
+        
+
 
 编译指令：
         %clang 类名.m -framework Foundation // %clang 编译器，-framework 标示使用了Foundation框架中的内容（动态库）
