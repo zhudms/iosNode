@@ -1,0 +1,3 @@
+属性声明：
+        使用编译指令@property 加属性类型信息和名称，自动生成getter和setter方法，只读在@property后加“（readonly）”,多个相同声明可写在一行用“，”隔开
+        
