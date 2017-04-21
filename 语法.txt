@@ -1,8 +1,33 @@
 属性声明：
+
+@property
         使用编译指令@property 加属性类型信息和名称，自动生成getter和setter方法，只读在@property后加“（readonly）”,多个相同声明可写在一行用“，”隔开
         可以隐藏是否对变量进行了属性声明，子类中只能通过访问方法来访问，不能直接方法父类的实例变量
+        可用选项：
+        指定方法名：  getter=getter 方法名//
+                     setter=setter 方法名//显示指定getter和setter方法名
+        读写属性：    readonly //只读
+                     readwrite //读写（默认的）
+        赋值时选项：  (各属性之间有排他性) 
+                     assign //单纯赋值
+                     retain //进行保持操作
+                     unsafe_unretained //同assign一样（用于ARC）
+                     strong //同assign一样（用于ARC）
+                     weak //弱引用（用于ARC）
+                     copy //复制对象
+                     以上说明不严谨，详情看图片
+        原子操作：    nonatomic 非原子性操作，非线程安全
+        setter option:指定访问属性用的方法名
+                     例：@property（setter=setValue：） int hitPoint// 使用点运算符调用.hitPoint，但世界杀死那个启动的方法是setValue
+
+
+@synthesize   
         使用编译指令@synthesize  加属性名称 就能自动生成和接口文件中声明的属性一致的访问方法，但是属性声明的情况下不允许这种做法，
         接口中不使用@property 进行定义就不能再实现文件中使用@synthesize
         可以使用此关键字生存名为A 的访问方法，并将其绑定到实例变量B中
         例：synthesize value=runningAverage
+        当接口文件和实现文件中都没有声明的时候（需要使用@property声明），可以直接在类的实现文件中通过@synthesize生成同名同类型的实例变量（传统运行时系统不能使用此功能）
+        其有效区间从声明之后开始（可用此特性实现封装的目的）
+
+@dynamic
         可以使用@dynamic关键字告诉编译器自动合成无效，用户会自己生成属性的getter和setter方法
