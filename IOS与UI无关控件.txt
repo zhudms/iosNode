@@ -1,0 +1,11 @@
+IOS非UI控件：
+    NSTimer:
+    NSTimer* timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updataTimer) userInfo:nil repeats:N
+    //scheduledTimerWithTimeInterval 每隔多长时间调用定时器函数，以秒为单位
+    //target 实现定时器函数的对象（指针）
+    //selector 定时器函数对象
+    //userInfo 可以给定时器函数传递一个参数，无参可以穿nil
+    //repeats 定时器是否重复
+    //（其实就是定时器回调的时候去哪里找哪个方法用哪个参数）
+
+    【timer invalidate】;//使定时器失效（停止定时器）
