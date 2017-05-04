@@ -1,2 +1,60 @@
 常用控件：
+    UIVIew 可以使用alloc 方法创建并初始化
     UIButton 只能使用类方法创建
+    
+    
+    UIWindow 特殊的UIView  //处理视图等动作需要使用self.window
+    UIScreen 屏幕硬件表示类 //存储各种窗口数据，但是不参与操作，基本只使用一次，用来获取各种信息【UiScreen mainScreen】.bounds(窗口信息（bounds,矩形框，当前屏幕大小）)
+    mainScreen 获得主屏幕设备信息
+    bounds 屏幕的宽高
+    每个UIView 都有一个view.window 属性，表示当前view附属的window，（其实一个程序中只有一个window 即UIWindow）
+    整个UIKit框架中只有一个“根”视图控制器，属于window的属性，用来管理界面和处理界面逻辑的类对象，视图控制器可以有很多个，可以切换
+    现在，程序启动前，必须对根视图控制器进行赋值
+    所有的视图控制器都要自定义完成，并继承于ViewController
+
+
+    当view被添加到window中时会对此字段赋值，子view添加到父view中时会对子视图中window赋值
+
+    子视图永远基于父视图，跟Android 一致
+
+
+
+    supporting File 下的main.m 就是应用的入口函数，ios框架去维护
+    <argc 启动时带有参数的个数
+    argv 参数列表
+    主框架类名，当参数为nil，系统使用默认的框架类作为主框架 Info.plist 中的NSPrincipalClass 字段指定，如果还没有（XCode6以后就没有了），使用UIApplication类，
+    代理类
+    主框架代理对象名字 默认AppDelegate>
+
+
+    ViewController:
+    viewDidLoad 视图第一次加载时被调用（只会被调用一次），多用于布局的初始化和资源的初始化
+    didReceiveMemoryWarning 系统内存过低时，发出警告并调用此函数
+
+    viewWillAppear 视图显示前(未显示) （其他状态：正在显示，即将消失，已经被隐藏）
+    viewDidAppear
+    viewWillDissppear
+    viewDidDissppear
+    viewWillLayoutStubviews//这两个应该不常用
+    viewDidLayoutStubviews
+
+    touchesBegan：（（NSset<UITouch *>）*）touches withEvent:(UIEvent *) event{} 点击屏幕
+
+切换视图：
+    在ViewController中调用
+    ViewC02* vc2=[[ViewC02 alloc] init];
+    [self presentViewController:vc2 animated:YES completion:nil]
+    //cv2：新的控制器对象
+    //animated：是否使用切换动画
+    //completion：切换结束后功能调用，不需要传nil即可（bolck语法）
+
+    消失当前视图控制器
+    [self dismissViewControllerAnimated:YES completion:nil]
+    //dismissViewControllerAnimated 是否使用切换动画
+    //completion：切换结束后功能调用，不需要传nil即可（bolck语法）
+
+
+
+
+
+    
