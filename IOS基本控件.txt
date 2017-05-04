@@ -1,7 +1,7 @@
 常用控件：
     UIVIew 可以使用alloc 方法创建并初始化
     UIButton 只能使用类方法创建
-    
+ 
     
     UIWindow 特殊的UIView  //处理视图等动作需要使用self.window
     UIScreen 屏幕硬件表示类 //存储各种窗口数据，但是不参与操作，基本只使用一次，用来获取各种信息【UiScreen mainScreen】.bounds(窗口信息（bounds,矩形框，当前屏幕大小）)
@@ -40,7 +40,67 @@
 
     touchesBegan：（（NSset<UITouch *>）*）touches withEvent:(UIEvent *) event{} 点击屏幕
 
-切换视图：
+
+
+
+    UISwitch ：
+    可以使用alloc&init方法创建并初始化
+    位置可以改变，但是大小无法控制（可以设置，但不生效）
+
+    UISwitcher:
+    settON 开启状态颜色
+    setOnTintColor  开启时圆钮后面的颜色
+    setThumbTintColor 圆钮的颜色
+    setTintColor  关闭时边缘的颜色
+    平时看到的白色是下层控件的颜色
+
+    [_mySwitch addTarget:self action：@selector(swChange:) forControlEvents:UIControlEventValueChanged];
+    _mySwitch.on==YES  开关当前的状态
+    _mySwitch.on=Yes  设置开关状态
+    [_mySwitch setON:YES] 设置开关状态
+
+    进度条：
+    高度不可变（宽可变） 
+    progress:(0-1之间的小数 )
+    profressHintColor:进度的颜色
+    trackThintColor:背景条颜色
+    progressViewStyle:样式
+
+    无法添加事件
+
+    滑动条：
+    maximumValue:
+    minimumValue:
+    可为负值,定义为float类型
+
+    minimuntrackTintColor:左侧滑条背景颜色
+    maximuntrackTintColor:右侧滑条背景颜色
+    thumbTintColor:滑块颜色
+
+    可以使用addTag方法添加事件
+
+
+    步进器：
+    宽高不能变
+    maximumValue:
+    minimumValue:
+    value:当前值
+    stepValue:步进的步伐值
+    autorepeat:是否可以重复响应事件操作（响应按住）（响应时速度渐快）
+    continuous:是否将步进结果通过事件函数响应出来（只有当continuous为YES时才有效果（当设置为NO，按住时，步进在进行，但是不回掉事件方法，当松开时才回掉）
+  
+  
+    分栏控件：
+    宽度可变，高度不可变
+    [XXX insertSegmentWithTitle:@"a" atIndex:0 animated:No] 给分栏控制器添加一个元素（类似radioButton）
+    selectedSegmentIndex:当前选中的值
+    各子元素平分总宽度
+  
+
+    弹框：
+    等待指示器：宽高不可变
+
+    切换视图：
     在ViewController中调用
     ViewC02* vc2=[[ViewC02 alloc] init];
     [self presentViewController:vc2 animated:YES completion:nil]
@@ -48,10 +108,13 @@
     //animated：是否使用切换动画
     //completion：切换结束后功能调用，不需要传nil即可（bolck语法）
 
+
+
     消失当前视图控制器
     [self dismissViewControllerAnimated:YES completion:nil]
     //dismissViewControllerAnimated 是否使用切换动画
     //completion：切换结束后功能调用，不需要传nil即可（bolck语法）
+
 
 
 
