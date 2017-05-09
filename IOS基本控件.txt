@@ -106,9 +106,9 @@
     以层级的方式管理多个视图控制器的切换，创建时，一定要有一个根视图控制器（其本身没有）
     使用【self.navaitationContraller pushViewController:vc animation:YES】 跳转下一级页面，新的导航控制器会入栈
     self.navigationController 永远指向栈顶的导航控制器
+    当导航控制器不被添加左侧按钮，默认为返回按钮，添加后，会覆盖左侧按钮（这里应该是用钩子实现的）
 
 
-    
     切换视图：
     在ViewController中调用
     ViewC02* vc2=[[ViewC02 alloc] init];
