@@ -99,7 +99,16 @@
 
     弹框：
     等待指示器：宽高不可变
+    滚动视图：
+    
 
+    UINavigationController:(导航控制器)
+    以层级的方式管理多个视图控制器的切换，创建时，一定要有一个根视图控制器（其本身没有）
+    使用【self.navaitationContraller pushViewController:vc animation:YES】 跳转下一级页面，新的导航控制器会入栈
+    self.navigationController 永远指向栈顶的导航控制器
+
+
+    
     切换视图：
     在ViewController中调用
     ViewC02* vc2=[[ViewC02 alloc] init];
@@ -117,7 +126,7 @@
 
 
 
-
+    层级关系：view->ViewController->UIWindow->UIApplication->AppDelegate
 
 
     
