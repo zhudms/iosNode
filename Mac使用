@@ -1,0 +1,7 @@
+
+Mac使用
+
+一般程序所在文件在 /Applications 下面。
+在Finder中可以按cmd+shift+a 快速跳转 至于所含内容，不同程序的目标位置不一样，有些程序还可以设置 
+新版QQ采用了沙盒技术，位置在 ~/Library/Containers/com.tencent.qq/Data/Library/Application Support/QQ 把这一段复制，
+然后在finder里面按cmd+shift+g ，在弹出框里粘贴地址进去跳转就能看到了
