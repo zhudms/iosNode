@@ -107,6 +107,46 @@
     使用【self.navaitationContraller pushViewController:vc animation:YES】 跳转下一级页面，新的导航控制器会入栈
     self.navigationController 永远指向栈顶的导航控制器
     当导航控制器不被添加左侧按钮，默认为返回按钮，添加后，会覆盖左侧按钮（这里应该是用钩子实现的）
+    使用【self.navigationController popViewControllerAnimated:YES】 返回上级菜单
+    使用【self.navigationController popToRootViewControllerAnimation:YES】返回到栈底页面
+
+    //将导航控制器设置为不透明
+    self.navigationController.navigationBar.barStyle=UIBarStyleBlackOpaque;
+    self.navigationController.navigationBar.translucent=NO;//两个应该一起用，但是这个更重要
+
+    //将导航控制器其他颜色
+    self.navigationController.navigationBar.barTintColor=[UIColor redColor];//设置这个属性后，上面的两行就不起作用了
+  
+    //设置导航元素项目按钮的风格颜色
+    self.navigationController.navigationBar.tintColor=[UIColor redColor];
+
+    //隐藏导航
+    self.navigationController.navigationBarHidden=YES;
+    self.navigationController.navigationBar.hidden=YES;
+
+    公用的属于导航控制器，局部的，属于等位，工具栏也属于导航控制器，只要工具栏没被隐藏就一直在，导航元素响，是
+
+
+
+    分栏控制器：
+    管理多个视图控制器的管理控制器，通过数组方式管理多个平行关系的视图控制器，与导航控制器的的区别在与，导航控制器管理的是带有层级关系的控制器
+    分栏控制器在同一个界面最多显示5个控制器切换按钮，多出来的就会自动创建一个新的导航控制器来管理其余的控制器。
+
+
+
+
+
+    //固定宽带占位按钮：
+    UIBarButtonItem* btn1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIbarButtonSystemItemFixSpace target：nil  action：nil];
+    btn1.with=30;
+
+    //自动计算宽度按钮
+    UIBarButtonItem* btn2=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtionSystemItemFlexbleSpace target:nil action：nil];
+
+
+
+
+
 
 
 
