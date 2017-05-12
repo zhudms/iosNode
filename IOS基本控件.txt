@@ -149,6 +149,18 @@
 
 
 
+    UITableView 
+   //单元格显示效果协议
+    -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return UITableViewCellEditingStyleInsert|UITableViewCellEditingStyleDelete;//组合状态，效果为多选，API中无体现
+    //    return UITableViewCellEditingStyleInsert;//添加
+    //    return UITableViewCellEditingStyleDelete;//默认也是这个效果
+    }
+ 
+
+
+
 
 
 
