@@ -1,4 +1,4 @@
-﻿XCode 快捷键：
+XCode 快捷键：
 
     注释 command+/
 
@@ -146,6 +146,24 @@
     【command】+【~】
 
 
+command+8 编译历史记录
 
-
+control+i 自动排版，格式化代码
 	打字的时候使用回车，直接输入而不使用备选词
+
+
+XCode中的文本查找和文本替换功能
+    1.如果是在打开的文档范围内：
+      查找： Command+ F
+      替换： Option+Command+F
+                  Replace All   是全部替换本文档范围内的字符串
+                  Replace 是替换当前字符串
+                  Replace & Find是边查找边替换
+
+
+
+   2.如果是全局查找和替换
+      查找：点击左边工具栏里面的“放大镜”按钮  或者 Shift+Command +F
+      替换：点击左边工具栏里面的“放大镜”按钮，然后左边 Find 改为 Replace即可。或者 Shift+Option+Command+F
+
+     其实 全局的快捷键就是在 文档快捷键上面多加一个Shift 键，替换的快捷键是加上option键。
