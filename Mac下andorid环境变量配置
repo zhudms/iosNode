@@ -1,0 +1,14 @@
+Mac 下环境变量配置
+
+下面我将一下mac环境下的配置步骤：
+
+1、在本地目录（～./）(User/当前用户／)中创建文件.bash_profile
+2、在文件中写入以下内容：export PATH=${PATH}:/Users/sxpmg/Application/android-sdk-mac_x86/tools:/Users/sxpmg/Application/android-sdk-mac_x86/platform-tools
+其中：/Users/sxpmg/Application/android-sdk-mac_x86/tools不是固定的，它指向android SDK的tools目录，/Users/sxpmg/Application/android-sdk-mac_x86/platform-tools指向android SDK的platform-tools目录，也是根据具体情况而定。这只是我配置的时候所用的路径而已。
+3、执行如下命令：source .bash_profile
+4、验证：输入adb回车。如果未显示command not found，说明此命令有效，环境便亮设置完成
+
+当前使用
+export PATH=${PATH}:/Users/rongyile/Library/Android/sdk/platform-tools:/Users/rongyile/Library/Android/sdk/tools
+
+sdk路径可以在android sdk Manager中查看
