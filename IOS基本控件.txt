@@ -180,6 +180,10 @@
     //completion：切换结束后功能调用，不需要传nil即可（bolck语法）
 
 
+    页面切换
+    present 和dismiss配对使用
+    push和pop配对使用
+
 
     层级关系：view->ViewController->UIWindow->UIApplication->AppDelegate
 
