@@ -1,0 +1,7 @@
+IOS文件路径创建：
+    A=[A stringByAppendingPathComponent:@"scan"];
+    结果：A/scan
+    下节路径仍然要用此方法，会自动在路径前加分隔符，不会在末尾添加分隔符
+    使用固定字符串添加路径，无法在末尾保留分隔符，可以保留最前端分隔符
+
+    需要在字符串前端添加分隔符时需要使用 stringByAppendingPathComponent 方法，其他路径节点仍使用 stringByAppendingString
