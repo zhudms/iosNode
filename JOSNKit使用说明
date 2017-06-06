@@ -1,0 +1,20 @@
+JSONKit使用
+在arc下使用,需要在Build Phases ->Compile Sources 选择文件双击，在对话框中添加“-fno-objc-arc”参数（不含引号）。（添加文件目录别表中，给JsonKit类添加限制说明）
+
+如果编译出现下面的错误：
+报错信息：error: assignment to Objective-C‘s isa is deprecated in favor of object_setClass()
+解决办法：
+（1）修改JSONKit.m文件第680行，修改为object_setClass(array, _JKArrayClass);
+（2）修改JSONKit.m文件第931行，修改为object_setClass(dictionary, _JKDictionaryClass);
+
+使用：
+// 字典或数组转换成json  
+    NSArray *arr = @[@"12",@"13",@"14"];  
+    NSDictionary *dic = @{@"uid":@"456", @"arr":arr};  
+    NSString *JSONStr = [arr JSONString];  
+    NSString *JSONDicStr = [dic JSONString];  
+    NSLog(@"json字符串:%@\njson字符串:%@",JSONStr,JSONDicStr);  
+      
+    // 将json数据转换成字典  
+    NSDictionary *newDic = [JSONDicStr objectFromJSONString];  
+    NSLog(@"json字符串转字典:%@", newDic);  
