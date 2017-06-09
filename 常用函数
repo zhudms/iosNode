@@ -1,0 +1,5 @@
+
+NSString：
+[NSString stringWithFormat:@"%@/%@",documentPath,parentPath];
+[parentPath stringByAppendingPathComponent:fileName];
+
