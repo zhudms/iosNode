@@ -1,0 +1,39 @@
+#iOS9弹框的最新两种方式（解决控制器以外的类无法弹出的问题）
+
+###弹框出现在屏幕中间位置
+
+
++ UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否退出" preferredStyle: UIAlertControllerStyleAlert]; 
++ [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
++ [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        //点击确认后需要做的事
+    }]];
++ [self presentViewController:alert animated:YES completion:nil]; //注意一定要写此句，否则不会显示
+
+ 
+
+###此方法可以添加文本框，输入内容
+
++ [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入名字";
+    }];
++ [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入价格";
+    }];
+复制代码
+ 
+
+###弹框出现在屏幕底部（两种方式的不同点在于代码第一行最后的，底部是UIAlertControllerStyleActionSheet）
+
++ UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否退出" preferredStyle: UIAlertControllerStyleActionSheet]; 
+2. [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+3. [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+//点击确认后需要做的事
+}]];
+6. [self presentViewController:alert animated:YES completion:nil]; //注意一定要写此句
+7. [self showViewController:alert sender:nil]；   //此句也可以
+
+### 如果是其它类，不是控制器，则可以用下面方法让弹框显现出来：
+
+1. UIViewController *vc = [UIApplication sharedApplication].keyWindow.rootViewController;
+2. [vc showViewController:alert sender:nil];

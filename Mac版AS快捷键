@@ -37,7 +37,7 @@ Ctrl+shift+Q 查看当前光标所在的类
 alt+回车 查看当前元素可以做的操作
 
 alt+⌘+L 格式化代码 
-Ctrl+Alt+O 自动导包 
+Ctrl+Alt+O 自动导包 control+option+o
 Ctrl+Alt+I 自动缩进行
 
 ⌘+Alt+M 抽取方法 
