@@ -1,3 +1,4 @@
+.bash_profile
 
 打开终端，执行（查找）     /usr/libexec/java_home -V  
 
